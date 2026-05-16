@@ -1,0 +1,71 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  padding: 2rem 0 4rem 0;
+}
+
+/* Elegant Card Styles */
+.elegant-card {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(156, 175, 136, 0.2);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+.elegant-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(107, 123, 94, 0.1);
+  border-color: rgba(156, 175, 136, 0.4);
+}
+
+/* Elegant Button */
+.btn-elegant {
+  background: linear-gradient(135deg, #8B9D7A 0%, #6B7B5E 100%);
+  color: white;
+  border: none;
+  padding: 12px 32px;
+  border-radius: 40px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(107, 123, 94, 0.2);
+}
+
+.btn-elegant:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(107, 123, 94, 0.3);
+  background: linear-gradient(135deg, #9CAF88 0%, #8B9D7A 100%);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid #8B9D7A;
+  color: #6B7B5E;
+  padding: 10px 28px;
+  border-radius: 40px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  background: #8B9D7A;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Quote Accent */
+.elegant-quote {
+  font-family: 'Pinyon Script', cursive;
+  font-size: 2rem;
+  color: #D4B8A8;
+  text-align: center;
+  margin: 2rem 0;
+}

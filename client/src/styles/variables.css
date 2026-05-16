@@ -1,0 +1,57 @@
+/* ============================================
+   VARIABLES & DESIGN TOKENS
+   Beige & Sage Green Theme
+   ============================================ */
+
+:root {
+  /* Colors - Main Palette */
+  --color-bg-primary: #FDFBF7;
+  --color-bg-warm: #F5ECE6;
+  --color-beige: #F5ECE6;
+  --color-sage-light: #9CAF88;
+  --color-sage: #8B9D7A;
+  --color-sage-dark: #6B7B5E;
+  --color-dusty-rose: #D4B8A8;
+  --color-text: #2C2A29;
+  --color-text-soft: #5a5552;
+  
+  /* Gradients */
+  --gradient-hero: linear-gradient(135deg, #FDFBF7 0%, #F5ECE6 100%);
+  --gradient-sage: linear-gradient(135deg, #8B9D7A 0%, #6B7B5E 100%);
+  --gradient-rose: linear-gradient(135deg, #D4B8A8 0%, #C4A898 100%);
+  
+  /* Fonts */
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Cormorant Garamond', 'Georgia', serif;
+  --font-accent: 'Pinyon Script', cursive;
+  
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 4rem;
+  --spacing-xl: 6rem;
+  
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 20px rgba(107, 123, 94, 0.08);
+  --shadow-lg: 0 8px 30px rgba(107, 123, 94, 0.12);
+  
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 20px;
+  --radius-lg: 40px;
+  
+  /* Transitions */
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg-primary: #2C2A29;
+    --color-bg-warm: #3a3634;
+    --color-text: #FDFBF7;
+    --color-text-soft: #D4C5B9;
+  }
+}
