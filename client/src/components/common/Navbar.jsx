@@ -1,85 +1,116 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
+import { useTheme } from '../../context/ThemeContext';
 import './Navbar.css';
 
 const Navbar = () => {
   const { user, logout } = useAuth();
+  const { isDarkMode, toggleTheme } = useTheme();
   const navigate = useNavigate();
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const handleLogout = () => {
     logout();
     navigate('/');
+    setIsSidebarOpen(false);
   };
 
   return (
-    <nav className="navbar">
-      <div className="nav-container">
-        {/* Logo */}
-        <Link to="/" className="nav-logo">
-          <span className="logo-icon">📖</span>
-          <span className="logo-text">Petals & Pages</span>
-          <span className="logo-dot">✦</span>
-        </Link>
+    <>
+      <nav className="navbar">
+        <div className="nav-container">
+          {/* Logo - Now opens sidebar */}
+          <button 
+            className="nav-logo sidebar-toggle" 
+            onClick={() => setIsSidebarOpen(true)}
+            style={{ background: 'none', border: 'none', cursor: 'pointer', fontFamily: 'inherit', display: 'flex', alignItems: 'center', gap: '0.5rem', padding: 0 }}
+          >
+            <span className="logo-icon">📖</span>
+            <span className="logo-text">Petals & Pages</span>
+            <span className="logo-dot">✦</span>
+          </button>
 
-        {/* Desktop Navigation */}
-        <div className="nav-links">
-          <Link to="/" className="nav-link">Home</Link>
-          {user && (
-            <>
-              <Link to="/reading-list" className="nav-link">My Library</Link>
-              <Link to="/profile" className="nav-link">Profile</Link>
-            </>
-          )}
+          {/* Desktop Navigation */}
+          <div className="nav-links">
+            <Link to="/" className="nav-link">Home</Link>
+            {user && (
+              <>
+                <Link to="/reading-list" className="nav-link">My Library</Link>
+                <Link to="/profile" className="nav-link">Profile</Link>
+              </>
+            )}
+          </div>
+
+          {/* Auth Buttons */}
+          <div className="nav-auth">
+            {user ? (
+              <div className="user-menu">
+                <span className="user-greeting">Hello, {user.name?.split(' ')[0]}</span>
+                <button onClick={handleLogout} className="logout-btn">
+                  ✦ Logout ✦
+                </button>
+              </div>
+            ) : (
+              <div className="auth-buttons">
+                <Link to="/login" className="auth-link login">Sign In</Link>
+                <Link to="/register" className="auth-link register">Join</Link>
+              </div>
+            )}
+            
+            {/* Theme Toggle Button */}
+            <button 
+              className="theme-toggle-btn" 
+              onClick={toggleTheme}
+              title="Toggle Dark Mode"
+            >
+              <span className="menu-icon" style={{ fontSize: '1.2rem', background: 'none', border: 'none', cursor: 'pointer' }}>{isDarkMode ? '☀️' : '☾'}</span>
+            </button>
+          </div>
         </div>
+      </nav>
 
-        {/* Auth Buttons */}
-        <div className="nav-auth">
-          {user ? (
-            <div className="user-menu">
-              <span className="user-greeting">Hello, {user.name?.split(' ')[0]}</span>
-              <button onClick={handleLogout} className="logout-btn">
-                ✦ Logout ✦
-              </button>
-            </div>
-          ) : (
-            <div className="auth-buttons">
-              <Link to="/login" className="auth-link login">Sign In</Link>
-              <Link to="/register" className="auth-link register">Join</Link>
-            </div>
-          )}
-        </div>
-
-        {/* Mobile Menu Button */}
-        <button 
-          className="mobile-menu-btn" 
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-        >
-          <span className="menu-icon">{isMenuOpen ? '✕' : '☾'}</span>
-        </button>
-      </div>
-
-      {/* Mobile Menu */}
-      {isMenuOpen && (
-        <div className="mobile-menu">
-          <Link to="/" onClick={() => setIsMenuOpen(false)}>Home</Link>
-          {user && (
-            <>
-              <Link to="/reading-list" onClick={() => setIsMenuOpen(false)}>My Library</Link>
-              <Link to="/profile" onClick={() => setIsMenuOpen(false)}>Profile</Link>
-              <button onClick={handleLogout}>Logout</button>
-            </>
-          )}
-          {!user && (
-            <>
-              <Link to="/login" onClick={() => setIsMenuOpen(false)}>Sign In</Link>
-              <Link to="/register" onClick={() => setIsMenuOpen(false)}>Join</Link>
-            </>
-          )}
-        </div>
+      {/* Sidebar Overlay */}
+      {isSidebarOpen && (
+        <div className="sidebar-overlay" onClick={() => setIsSidebarOpen(false)}></div>
       )}
-    </nav>
+
+      {/* Elegant Sidebar */}
+      <div className={`sidebar ${isSidebarOpen ? 'open' : ''}`}>
+        <div className="sidebar-header">
+          <span className="sidebar-title">Menu ✦</span>
+          <button className="close-sidebar" onClick={() => setIsSidebarOpen(false)}>✕</button>
+        </div>
+        <div className="sidebar-content">
+          <Link to="/" onClick={() => setIsSidebarOpen(false)} className="sidebar-link">Home</Link>
+          <div className="sidebar-divider"></div>
+          
+          <h3 className="sidebar-subtitle">Explore Genres</h3>
+          <div className="sidebar-genres">
+            {['Fiction', 'Romance', 'Fantasy', 'Mystery', 'Poetry', 'Sci-Fi', 'History'].map(genre => (
+              <span key={genre} className="sidebar-genre-item" onClick={() => {
+                navigate(`/?genre=${genre}`);
+                setIsSidebarOpen(false);
+              }}>{genre}</span>
+            ))}
+          </div>
+
+          <div className="sidebar-divider"></div>
+          {user ? (
+            <>
+              <Link to="/reading-list" onClick={() => setIsSidebarOpen(false)} className="sidebar-link">My Library</Link>
+              <Link to="/profile" onClick={() => setIsSidebarOpen(false)} className="sidebar-link">Profile</Link>
+              <button onClick={handleLogout} className="sidebar-link logout-link" style={{ background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', width: '100%', padding: 0 }}>Logout</button>
+            </>
+          ) : (
+            <>
+              <Link to="/login" onClick={() => setIsSidebarOpen(false)} className="sidebar-link">Sign In</Link>
+              <Link to="/register" onClick={() => setIsSidebarOpen(false)} className="sidebar-link">Join</Link>
+            </>
+          )}
+        </div>
+      </div>
+    </>
   );
 };
 

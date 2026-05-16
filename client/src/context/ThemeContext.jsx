@@ -20,6 +20,14 @@ export const ThemeProvider = ({ children }) => {
     }
   }, []);
 
+  useEffect(() => {
+    if (isDarkMode) {
+      document.body.classList.add('dark-theme');
+    } else {
+      document.body.classList.remove('dark-theme');
+    }
+  }, [isDarkMode]);
+
   const toggleTheme = () => {
     setIsDarkMode(!isDarkMode);
     localStorage.setItem('theme', !isDarkMode ? 'dark' : 'light');
