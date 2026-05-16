@@ -38,7 +38,7 @@ const seedDatabase = async () => {
           description: "Under the influence of a charismatic classics professor, a group of clever, eccentric misfits at a New England college discover a way of thought and life a world away from the humdrum existence of their contemporaries.",
           genre: "Fiction",
           publishedYear: 1992,
-          coverImage: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&q=80&w=800",
+          coverImage: "/images/The Secret History.jpg",
           averageRating: 4.8,
           totalReviews: 12
         },
@@ -48,7 +48,7 @@ const seedDatabase = async () => {
           description: "A classic novel of manners that follows the character development of Elizabeth Bennet, the dynamic protagonist of the book who learns about the repercussions of hasty judgments.",
           genre: "Romance",
           publishedYear: 1813,
-          coverImage: "https://images.unsplash.com/photo-1629196914948-4389020993f4?auto=format&fit=crop&q=80&w=800",
+          coverImage: "/images/pride and prejudice.jpg",
           averageRating: 4.9,
           totalReviews: 45
         },
@@ -58,7 +58,7 @@ const seedDatabase = async () => {
           description: "The Bell Jar chronicles the crack-up of Esther Greenwood: brilliant, beautiful, enormously talented, and successful, but slowly going under—maybe for the last time.",
           genre: "Fiction",
           publishedYear: 1963,
-          coverImage: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&q=80&w=800",
+          coverImage: "/images/the bell jar.jpg",
           averageRating: 4.6,
           totalReviews: 32
         },
@@ -68,19 +68,9 @@ const seedDatabase = async () => {
           description: "In the house of Helios, god of the sun and mightiest of the Titans, a daughter is born. But Circe is a strange child—not powerful, like her father, nor viciously alluring like her mother.",
           genre: "Fantasy",
           publishedYear: 2018,
-          coverImage: "https://images.unsplash.com/photo-1614113489855-66422ad300a4?auto=format&fit=crop&q=80&w=800",
+          coverImage: "/images/Circe.jpg",
           averageRating: 4.7,
           totalReviews: 28
-        },
-        {
-          title: "Pride and Prejudice",
-          author: "Jane Austen",
-          description: "A classic novel of manners that follows the character development of Elizabeth Bennet, who learns about the repercussions of hasty judgments and the difference between superficial goodness and actual goodness.",
-          genre: "Romance",
-          publishedYear: 1813,
-          coverImage: "https://images.unsplash.com/photo-1629196914948-4389020993f4?auto=format&fit=crop&q=80&w=800",
-          averageRating: 4.9,
-          totalReviews: 45
         },
         {
           title: "Jane Eyre",
@@ -88,7 +78,7 @@ const seedDatabase = async () => {
           description: "A passionate story of a young woman's search for love, independence, and self-respect in Victorian England.",
           genre: "Romance",
           publishedYear: 1847,
-          coverImage: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=800",
+          coverImage: "/images/jane eyre.jpg",
           averageRating: 4.8,
           totalReviews: 38
         },
@@ -98,7 +88,7 @@ const seedDatabase = async () => {
           description: "A tale of passionate yet destructive love between Catherine Earnshaw and Heathcliff, set on the bleak Yorkshire moors.",
           genre: "Romance",
           publishedYear: 1847,
-          coverImage: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=800",
+          coverImage: "/images/Wuthering Heights.jpg",
           averageRating: 4.7,
           totalReviews: 41
         },
@@ -108,7 +98,7 @@ const seedDatabase = async () => {
           description: "A story of two sisters navigating love, heartbreak, and societal expectations in 19th-century England.",
           genre: "Romance",
           publishedYear: 1811,
-          coverImage: "https://images.unsplash.com/photo-1629196914948-4389020993f4?auto=format&fit=crop&q=80&w=800",
+          coverImage: "/images/sense and sensability.jpg",
           averageRating: 4.6,
           totalReviews: 27
         },
@@ -118,31 +108,9 @@ const seedDatabase = async () => {
           description: "The tragic story of a married aristocrat's affair with a wealthy count, exploring themes of love, fidelity, and social hypocrisy.",
           genre: "Romance",
           publishedYear: 1877,
-          coverImage: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=800",
+          coverImage: "/images/anna karenina.jpg",
           averageRating: 4.8,
           totalReviews: 52
-        },
-
-        // Fiction & Literary Classics
-        {
-          title: "The Secret History",
-          author: "Donna Tartt",
-          description: "Under the influence of a charismatic classics professor, a group of clever, eccentric misfits at a New England college discover a way of thought and life a world away from their contemporaries.",
-          genre: "Fiction",
-          publishedYear: 1992,
-          coverImage: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&q=80&w=800",
-          averageRating: 4.8,
-          totalReviews: 12
-        },
-        {
-          title: "The Bell Jar",
-          author: "Sylvia Plath",
-          description: "The Bell Jar chronicles the crack-up of Esther Greenwood: brilliant, beautiful, enormously talented, and successful, but slowly going under—maybe for the last time.",
-          genre: "Fiction",
-          publishedYear: 1963,
-          coverImage: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&q=80&w=800",
-          averageRating: 4.6,
-          totalReviews: 32
         },
         {
           title: "To Kill a Mockingbird",
@@ -150,7 +118,7 @@ const seedDatabase = async () => {
           description: "A gripping story of racial injustice in the American South, seen through the eyes of young Scout Finch.",
           genre: "Fiction",
           publishedYear: 1960,
-          coverImage: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&q=80&w=800",
+          coverImage: "/images/to kill a mocking bird.jpg",
           averageRating: 4.9,
           totalReviews: 67
         },
@@ -160,7 +128,7 @@ const seedDatabase = async () => {
           description: "The mysterious Jay Gatsby's lavish Long Island parties and his obsessive pursuit of Daisy Buchanan.",
           genre: "Fiction",
           publishedYear: 1925,
-          coverImage: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=800",
+          coverImage: "/images/THE GREAT GATSBY.jpg",
           averageRating: 4.7,
           totalReviews: 89
         },
@@ -170,7 +138,7 @@ const seedDatabase = async () => {
           description: "The multi-generational story of the Buendía family in the mythical town of Macondo.",
           genre: "Fiction",
           publishedYear: 1967,
-          coverImage: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&q=80&w=800",
+          coverImage: "/images/One hundred years of solitude.jpg",
           averageRating: 4.8,
           totalReviews: 43
         },
@@ -180,19 +148,17 @@ const seedDatabase = async () => {
           description: "Holden Caulfield's rebellious journey through New York City after being expelled from prep school.",
           genre: "Fiction",
           publishedYear: 1951,
-          coverImage: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&q=80&w=800",
+          coverImage: "/images/the catcher in the rye.jpg",
           averageRating: 4.5,
           totalReviews: 78
         },
-
-        // Mystery & Thriller
         {
           title: "Murder on the Orient Express",
           author: "Agatha Christie",
           description: "A murder mystery aboard the famous luxury train, solved by detective Hercule Poirot.",
           genre: "Mystery",
           publishedYear: 1934,
-          coverImage: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=800",
+          coverImage: "/images/Murder on the Orient Express (2).jpg",
           averageRating: 4.7,
           totalReviews: 56
         },
@@ -202,7 +168,7 @@ const seedDatabase = async () => {
           description: "Sherlock Holmes investigates a legendary curse and a terrifying ghostly hound on the moors of Devonshire.",
           genre: "Mystery",
           publishedYear: 1902,
-          coverImage: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&q=80&w=800",
+          coverImage: "/images/the hounds of baskerville.jpg",
           averageRating: 4.6,
           totalReviews: 34
         },
@@ -212,7 +178,7 @@ const seedDatabase = async () => {
           description: "Ten strangers are invited to an island, and one by one, they begin to die.",
           genre: "Mystery",
           publishedYear: 1939,
-          coverImage: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&q=80&w=800",
+          coverImage: "/images/and then there were none.jpg",
           averageRating: 4.8,
           totalReviews: 61
         },
@@ -222,21 +188,9 @@ const seedDatabase = async () => {
           description: "A young woman marries a widower and moves to his grand estate, haunted by the memory of his first wife.",
           genre: "Mystery",
           publishedYear: 1938,
-          coverImage: "https://images.unsplash.com/photo-1629196914948-4389020993f4?auto=format&fit=crop&q=80&w=800",
+          coverImage: "/images/rebecca.jpg",
           averageRating: 4.7,
           totalReviews: 29
-        },
-
-        // Fantasy
-        {
-          title: "Circe",
-          author: "Madeline Miller",
-          description: "In the house of Helios, god of the sun, a daughter is born. But Circe is a strange child—not powerful like her father, nor viciously alluring like her mother.",
-          genre: "Fantasy",
-          publishedYear: 2018,
-          coverImage: "https://images.unsplash.com/photo-1614113489855-66422ad300a4?auto=format&fit=crop&q=80&w=800",
-          averageRating: 4.7,
-          totalReviews: 28
         },
         {
           title: "The Hobbit",
@@ -244,7 +198,7 @@ const seedDatabase = async () => {
           description: "Bilbo Baggins is swept into an epic quest to reclaim the lost Dwarf Kingdom of Erebor.",
           genre: "Fantasy",
           publishedYear: 1937,
-          coverImage: "https://images.unsplash.com/photo-1614113489855-66422ad300a4?auto=format&fit=crop&q=80&w=800",
+          coverImage: "/images/the hobbit.jpg",
           averageRating: 4.8,
           totalReviews: 73
         },
@@ -254,7 +208,7 @@ const seedDatabase = async () => {
           description: "The story of Kvothe, an adventurer and musician, told through his own narration.",
           genre: "Fantasy",
           publishedYear: 2007,
-          coverImage: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=800",
+          coverImage: "/images/The Name Of The Wind.jpg",
           averageRating: 4.8,
           totalReviews: 34
         },
@@ -264,19 +218,17 @@ const seedDatabase = async () => {
           description: "A young man promises his beloved he will retrieve a fallen star and ventures into the magical realm of Faerie.",
           genre: "Fantasy",
           publishedYear: 1999,
-          coverImage: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&q=80&w=800",
+          coverImage: "/images/Stardust.jpg",
           averageRating: 4.6,
           totalReviews: 22
         },
-
-        // Poetry
         {
           title: "The Sun and Her Flowers",
           author: "Rupi Kaur",
           description: "A collection of poetry about growth, healing, and finding light in darkness.",
           genre: "Poetry",
           publishedYear: 2017,
-          coverImage: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&q=80&w=800",
+          coverImage: "/images/the sun and her flowers.jpg",
           averageRating: 4.5,
           totalReviews: 18
         },
@@ -286,19 +238,17 @@ const seedDatabase = async () => {
           description: "A collection of poetry about survival, love, loss, and femininity.",
           genre: "Poetry",
           publishedYear: 2014,
-          coverImage: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&q=80&w=800",
+          coverImage: "/images/milk and honey.jpg",
           averageRating: 4.4,
           totalReviews: 25
         },
-
-        // Biography & Memoir
         {
           title: "Becoming",
           author: "Michelle Obama",
           description: "The intimate memoir of former First Lady Michelle Obama, tracing her journey from the South Side of Chicago to the White House.",
           genre: "Biography",
           publishedYear: 2018,
-          coverImage: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=800",
+          coverImage: "/images/Becoming.jpg",
           averageRating: 4.9,
           totalReviews: 42
         },
@@ -308,19 +258,17 @@ const seedDatabase = async () => {
           description: "The raw and powerful diary of a Jewish teenager hiding from the Nazis during World War II.",
           genre: "Biography",
           publishedYear: 1947,
-          coverImage: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&q=80&w=800",
+          coverImage: "/images/The Diary Of A Young Girl.jpg",
           averageRating: 4.8,
           totalReviews: 56
         },
-
-        // Sci-Fi
         {
           title: "1984",
           author: "George Orwell",
           description: "A dystopian vision of a totalitarian future where Big Brother watches every move.",
           genre: "Sci-Fi",
           publishedYear: 1949,
-          coverImage: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&q=80&w=800",
+          coverImage: "/images/George Orwell_ 1984.jpg",
           averageRating: 4.7,
           totalReviews: 94
         },
@@ -330,7 +278,7 @@ const seedDatabase = async () => {
           description: "A futuristic world where humans are engineered and happiness is manufactured.",
           genre: "Sci-Fi",
           publishedYear: 1932,
-          coverImage: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=800",
+          coverImage: "/images/Brave New World.jpg",
           averageRating: 4.6,
           totalReviews: 67
         },
@@ -340,19 +288,17 @@ const seedDatabase = async () => {
           description: "A dystopian novel set in a near-future New England where women are subjugated.",
           genre: "Sci-Fi",
           publishedYear: 1985,
-          coverImage: "https://images.unsplash.com/photo-1614113489855-66422ad300a4?auto=format&fit=crop&q=80&w=800",
+          coverImage: "/images/The Handmaid’s Tale.jpg",
           averageRating: 4.7,
           totalReviews: 51
         },
-
-        // Non-Fiction
         {
           title: "Sapiens",
           author: "Yuval Noah Harari",
           description: "A brief history of humankind, from the Stone Age to the 21st century.",
           genre: "Non-Fiction",
           publishedYear: 2011,
-          coverImage: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&q=80&w=800",
+          coverImage: "/images/Sapiens.jpg",
           averageRating: 4.8,
           totalReviews: 38
         },
@@ -362,19 +308,17 @@ const seedDatabase = async () => {
           description: "A handbook on how to find joy and purpose in life from the spiritual leader.",
           genre: "Non-Fiction",
           publishedYear: 1998,
-          coverImage: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&q=80&w=800",
+          coverImage: "/images/The Art of Happiness.jpg",
           averageRating: 4.6,
           totalReviews: 23
         },
-
-        // Thriller
         {
           title: "The Silent Patient",
           author: "Alex Michaelides",
           description: "A woman shoots her husband and then never speaks another word. A psychotherapist is determined to uncover her secret.",
           genre: "Thriller",
           publishedYear: 2019,
-          coverImage: "https://images.unsplash.com/photo-1629196914948-4389020993f4?auto=format&fit=crop&q=80&w=800",
+          coverImage: "/images/The Silent Patient.jpg",
           averageRating: 4.7,
           totalReviews: 29
         },
@@ -384,19 +328,17 @@ const seedDatabase = async () => {
           description: "A husband and wife's twisted relationship unravels when she disappears on their fifth anniversary.",
           genre: "Thriller",
           publishedYear: 2012,
-          coverImage: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=800",
+          coverImage: "/images/Gone Girl.jpg",
           averageRating: 4.5,
           totalReviews: 47
         },
-
-        // History
         {
           title: "The Nightingale",
           author: "Kristin Hannah",
           description: "Two sisters struggle to survive during World War II in Nazi-occupied France.",
           genre: "History",
           publishedYear: 2015,
-          coverImage: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&q=80&w=800",
+          coverImage: "/images/The Nightingale.jpg",
           averageRating: 4.9,
           totalReviews: 35
         },
@@ -406,7 +348,7 @@ const seedDatabase = async () => {
           description: "A blind French girl and a German boy's paths collide during World War II.",
           genre: "History",
           publishedYear: 2014,
-          coverImage: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&q=80&w=800",
+          coverImage: "/images/all the light we cannot see.jpg",
           averageRating: 4.8,
           totalReviews: 41
         }
