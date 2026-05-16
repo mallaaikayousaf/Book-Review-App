@@ -1,19 +1,18 @@
 const express = require('express');
 const router = express.Router();
+const { getReadingList, addToReadingList, removeFromReadingList, updateBookStatus } = require('../controllers/readingListController');
+const { protect } = require('../middleware/authMiddleware');
 
 // Get user's reading list
-router.get('/', (req, res) => {
-  res.json({ message: 'Get reading list endpoint working' });
-});
+router.get('/', protect, getReadingList);
 
 // Add to reading list
-router.post('/', (req, res) => {
-  res.json({ message: 'Add to reading list endpoint working' });
-});
+router.post('/', protect, addToReadingList);
 
 // Remove from reading list
-router.delete('/:id', (req, res) => {
-  res.json({ message: `Remove ${req.params.id} from reading list` });
-});
+router.delete('/:bookId', protect, removeFromReadingList);
+
+// Update book status
+router.put('/:bookId', protect, updateBookStatus);
 
 module.exports = router;

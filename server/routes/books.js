@@ -1,19 +1,14 @@
 const express = require('express');
 const router = express.Router();
+const { getBooks, getBookById, createBook } = require('../controllers/bookController');
 
 // Get all books
-router.get('/', (req, res) => {
-  res.json({ message: 'Get all books endpoint working' });
-});
+router.get('/', getBooks);
 
 // Get single book
-router.get('/:id', (req, res) => {
-  res.json({ message: `Get book with id ${req.params.id}` });
-});
+router.get('/:id', getBookById);
 
 // Create book
-router.post('/', (req, res) => {
-  res.json({ message: 'Create book endpoint working' });
-});
+router.post('/', createBook);
 
 module.exports = router;
