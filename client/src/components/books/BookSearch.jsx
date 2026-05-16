@@ -14,7 +14,9 @@ const BookSearch = ({ searchTerm, setSearchTerm, selectedGenre, setSelectedGenre
           onChange={(e) => setSearchTerm(e.target.value)}
           className="search-input"
         />
-        <span className="search-icon">🔍</span>
+        <button className="search-btn">
+          <span className="search-icon"></span> Search
+        </button>
       </div>
       
       <div className="genre-filters">

@@ -21,8 +21,8 @@ const Navbar = () => {
       <nav className="navbar">
         <div className="nav-container">
           {/* Logo - Now opens sidebar */}
-          <button 
-            className="nav-logo sidebar-toggle" 
+          <button
+            className="nav-logo sidebar-toggle"
             onClick={() => setIsSidebarOpen(true)}
             style={{ background: 'none', border: 'none', cursor: 'pointer', fontFamily: 'inherit', display: 'flex', alignItems: 'center', gap: '0.5rem', padding: 0 }}
           >
@@ -57,15 +57,7 @@ const Navbar = () => {
                 <Link to="/register" className="auth-link register">Join</Link>
               </div>
             )}
-            
-            {/* Theme Toggle Button */}
-            <button 
-              className="theme-toggle-btn" 
-              onClick={toggleTheme}
-              title="Toggle Dark Mode"
-            >
-              <span className="menu-icon" style={{ fontSize: '1.2rem', background: 'none', border: 'none', cursor: 'pointer' }}>{isDarkMode ? '☀️' : '☾'}</span>
-            </button>
+
           </div>
         </div>
       </nav>
@@ -84,7 +76,7 @@ const Navbar = () => {
         <div className="sidebar-content">
           <Link to="/" onClick={() => setIsSidebarOpen(false)} className="sidebar-link">Home</Link>
           <div className="sidebar-divider"></div>
-          
+
           <h3 className="sidebar-subtitle">Explore Genres</h3>
           <div className="sidebar-genres">
             {['Fiction', 'Romance', 'Fantasy', 'Mystery', 'Poetry', 'Sci-Fi', 'History'].map(genre => (

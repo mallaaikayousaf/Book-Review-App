@@ -1,5 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Pinyon+Script&display=swap');
 
+:root {
+  --color-background: #FDFBF7;
+  --color-surface: #F5ECE6;
+  --color-text: #2C2A29;
+  --color-text-soft: #6B7B5E;
+  --color-sage: #9CAF88;
+  --color-sage-dark: #8B9D7A;
+  --color-accent: #D4B8A8;
+}
+
+body.dark-theme {
+  --color-background: #1A1A1A;
+  --color-surface: #2D2D2D;
+  --color-text: #EFE6E0;
+  --color-text-soft: #A3B19B;
+  --color-sage: #7A8C69;
+  --color-sage-dark: #6B7B5E;
+  --color-accent: #B3998A;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -8,12 +28,13 @@
 
 body {
   font-family: 'Cormorant Garamond', 'Georgia', serif;
-  background: linear-gradient(135deg, #FDFBF7 0%, #F5ECE6 100%);
-  color: #2C2A29;
+  background: var(--color-background);
+  color: var(--color-text);
   line-height: 1.6;
   font-weight: 400;
   font-size: 18px;
   letter-spacing: 0.02em;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 /* Elegant Scrollbar */
