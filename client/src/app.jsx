@@ -10,7 +10,7 @@ import ProfilePage from './pages/ProfilePage';
 import { AuthProvider } from './context/AuthContext';
 import { ReadingListProvider } from './context/ReadingListContext';
 import { ThemeProvider } from './context/ThemeContext';
-import './app.css';
+import './App.css';
 
 function App() {
   return (

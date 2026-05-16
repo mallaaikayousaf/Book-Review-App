@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useReadingList } from '../context/ReadingListContext';
 import LoadingSpinner from '../components/common/LoadingSpinner';
 import BookCard from '../components/books/BookCard';

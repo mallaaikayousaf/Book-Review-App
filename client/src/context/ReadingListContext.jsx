@@ -1,6 +1,6 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
 import { useAuth } from './AuthContext';
-import { getReadingList, addToReadingList, removeFromReadingList, updateBookStatus } from '../services/readingListService';
+import { getReadingList, addToReadingList, removeFromReadingList, updateBookStatus } from '../services/readingListServices';
 
 const ReadingListContext = createContext();
 

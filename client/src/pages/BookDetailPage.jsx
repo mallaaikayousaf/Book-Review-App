@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useParams } from 'react-router-dom';
 import { getBookById } from '../services/bookServices';
 import { useAuth } from '../context/AuthContext';
@@ -13,13 +13,9 @@ const BookDetailPage = () => {
   const [loading, setLoading] = useState(true);
   const [showReviewForm, setShowReviewForm] = useState(false);
   const { user } = useAuth();
-  const { addToReadingList, isInReadingList } = useReadingList();
+  const { addToReadingList } = useReadingList();
 
-  useEffect(() => {
-    fetchBook();
-  }, [id]);
-
-  const fetchBook = async () => {
+  const fetchBook = useCallback(async () => {
     try {
       const data = await getBookById(id);
       setBook(data);
@@ -28,7 +24,11 @@ const BookDetailPage = () => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [id]);
+
+  useEffect(() => {
+    fetchBook();
+  }, [fetchBook]);
 
   const handleAddToList = async () => {
     if (!user) {

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import ReviewCard from './ReviewCard';
 import { getBookReviews, deleteReview } from '../../services/reviewServices';
 import LoadingSpinner from '../common/LoadingSpinner';
@@ -7,11 +7,7 @@ const ReviewList = ({ bookId }) => {
   const [reviews, setReviews] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    fetchReviews();
-  }, [bookId]);
-
-  const fetchReviews = async () => {
+  const fetchReviews = useCallback(async () => {
     setLoading(true);
     try {
       const data = await getBookReviews(bookId);
@@ -21,7 +17,11 @@ const ReviewList = ({ bookId }) => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [bookId]);
+
+  useEffect(() => {
+    fetchReviews();
+  }, [fetchReviews]);
 
   const handleDelete = async (reviewId) => {
     if (window.confirm('Are you sure you want to delete this review?')) {
