@@ -57,11 +57,22 @@ const BookDetailPage = () => {
 
   return (
     <div className="container fade-in" style={{ paddingTop: 'var(--spacing-lg)', paddingBottom: 'var(--spacing-lg)' }}>
-      <div style={{ display: 'grid', gridTemplateColumns: '300px 1fr', gap: 'var(--spacing-lg)' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: '300px 1fr', gap: 'var(--spacing-lg)', alignItems: 'start' }}>
         {/* Book Cover */}
         <div>
-          <div style={{ background: 'var(--gradient-hero)', borderRadius: 'var(--radius-md)', padding: '2rem', textAlign: 'center', border: '1px solid rgba(156, 175, 136, 0.2)' }}>
-            <div style={{ fontSize: '8rem' }}>📖</div>
+          <div style={{ borderRadius: 'var(--radius-md)', overflow: 'hidden', border: '1px solid rgba(156, 175, 136, 0.2)', background: '#e8ddd2', aspectRatio: '2/3', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            {book.coverImage ? (
+              <img
+                src={book.coverImage}
+                alt={book.title}
+                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                onError={(e) => { e.target.style.display='none'; e.target.nextSibling.style.display='flex'; }}
+              />
+            ) : null}
+            <div style={{ display: book.coverImage ? 'none' : 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', width: '100%', height: '100%', gap: '1rem' }}>
+              <span style={{ fontSize: '5rem' }}>📖</span>
+              <p style={{ fontFamily: 'Playfair Display, serif', color: '#6B7B5E', textAlign: 'center', padding: '0 1rem' }}>{book.title}</p>
+            </div>
           </div>
           
           <div style={{ marginTop: 'var(--spacing-md)', display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>

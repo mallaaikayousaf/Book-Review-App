@@ -32,6 +32,7 @@ main {
   border: none;
   padding: 12px 32px;
   border-radius: 40px;
+  font-style: italic;
   font-size: 16px;
   font-weight: 500;
   cursor: pointer;
@@ -51,6 +52,7 @@ main {
   color: #6B7B5E;
   padding: 10px 28px;
   border-radius: 40px;
+  font-style: italic;
   font-weight: 500;
   transition: all 0.3s ease;
 }

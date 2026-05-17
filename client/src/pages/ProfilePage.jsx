@@ -8,8 +8,8 @@ const ProfilePage = () => {
 
   const stats = {
     totalBooks: readingList.length,
-    completed: readingList.filter(item => item.status === 'completed').length,
-    reading: readingList.filter(item => item.status === 'currently-reading').length,
+    completed: readingList.filter(item => item.status === 'read').length,
+    reading: readingList.filter(item => item.status === 'reading').length,
     wantToRead: readingList.filter(item => item.status === 'want-to-read').length,
   };
 

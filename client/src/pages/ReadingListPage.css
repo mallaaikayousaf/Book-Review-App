@@ -1,0 +1,224 @@
+.reading-list-page {
+  padding-top: var(--spacing-lg);
+  padding-bottom: var(--spacing-lg);
+}
+
+.reading-list-count {
+  color: var(--color-sage);
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+}
+
+/* Status Tabs */
+.status-tabs {
+  display: flex;
+  gap: 0.8rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.status-tab {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 1.4rem;
+  border: 1px solid rgba(156, 175, 136, 0.3);
+  border-radius: 30px;
+  background: transparent;
+  color: var(--color-text-soft);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.status-tab.active {
+  background: var(--color-sage);
+  color: white;
+  border-color: var(--color-sage);
+}
+
+.status-tab:hover:not(.active) {
+  border-color: var(--color-sage);
+  color: var(--color-sage);
+}
+
+.tab-count {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  padding: 0 0.5rem;
+  font-size: 0.85rem;
+  min-width: 1.4rem;
+  text-align: center;
+}
+
+/* Grid */
+.reading-list-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.reading-list-card {
+  display: flex;
+  gap: 1.5rem;
+  background: var(--color-surface);
+  border: 1px solid rgba(156, 175, 136, 0.15);
+  border-radius: 16px;
+  padding: 1.2rem;
+  transition: box-shadow 0.3s ease;
+  align-items: flex-start;
+}
+
+.reading-list-card:hover {
+  box-shadow: 0 6px 24px rgba(107, 123, 94, 0.12);
+}
+
+/* Cover */
+.reading-list-cover {
+  flex-shrink: 0;
+  width: 80px;
+  height: 120px;
+  border-radius: 8px;
+  overflow: hidden;
+  display: block;
+  background: #e8ddd2;
+}
+
+.reading-list-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cover-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  background: linear-gradient(135deg, #e8ddd2, #d4c8bc);
+}
+
+/* Info */
+.reading-list-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.reading-list-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-sage);
+  text-decoration: none;
+  line-height: 1.3;
+}
+
+.reading-list-title:hover {
+  color: var(--color-hover);
+}
+
+.reading-list-author {
+  font-style: italic;
+  color: var(--color-olive-muted);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* Status Selector */
+.status-selector {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 0.3rem;
+}
+
+.status-label {
+  font-size: 0.9rem;
+  color: var(--color-text-soft);
+  white-space: nowrap;
+}
+
+.status-select {
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  border: 1.5px solid;
+  background: var(--color-text);
+  color: var(--color-bg-warm);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.status-select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(156, 175, 136, 0.15);
+}
+
+/* Badge */
+.status-badge {
+  display: inline-block;
+  padding: 0.25rem 0.8rem;
+  border-radius: 20px;
+  border: 1px solid;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  width: fit-content;
+}
+
+/* Remove */
+.remove-btn {
+  background: none;
+  border: 1px solid rgba(212, 184, 168, 0.4);
+  color: var(--color-bg-warm);
+  border-radius: 8px;
+  padding: 0.3rem 0.9rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: fit-content;
+  margin-top: 0.3rem;
+}
+
+.remove-btn:hover {
+  background: #FFE4E0;
+  border-color: #B85C50;
+  color: #B85C50;
+}
+
+/* Empty state */
+.empty-state {
+  text-align: center;
+  padding: 5rem 2rem;
+}
+
+.empty-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.empty-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  color: var(--color-sage-dark);
+  margin-bottom: 0.5rem;
+}
+
+.empty-subtitle {
+  color: var(--color-text-soft);
+  font-size: 1.1rem;
+}
+
+@media (max-width: 600px) {
+  .reading-list-cover {
+    width: 60px;
+    height: 90px;
+  }
+}

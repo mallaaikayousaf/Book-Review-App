@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import BookSearch from '../components/books/BookSearch';
 import BookList from '../components/books/BookList';
 import LoadingSpinner from '../components/common/LoadingSpinner';
@@ -6,10 +7,18 @@ import { getBooks } from '../services/bookServices';
 import './HomePage.css';
 
 const HomePage = () => {
-  const [books, setBooks] = useState([]);
+  const [allBooks, setAllBooks] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedGenre, setSelectedGenre] = useState('');
+  const location = useLocation();
+
+  // Read ?genre= from sidebar navigation
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const genre = params.get('genre') || '';
+    setSelectedGenre(genre);
+  }, [location.search]);
 
   useEffect(() => {
     fetchBooks();
@@ -18,17 +27,20 @@ const HomePage = () => {
   const fetchBooks = async () => {
     try {
       const data = await getBooks();
-      setBooks(data);
+      setAllBooks(Array.isArray(data) ? data : []);
     } catch (error) {
       console.error('Error fetching books:', error);
+      setAllBooks([]);
     } finally {
       setLoading(false);
     }
   };
 
-  const filteredBooks = books.filter(book => {
-    const matchesSearch = book.title?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                          book.author?.toLowerCase().includes(searchTerm.toLowerCase());
+  const filteredBooks = allBooks.filter(book => {
+    const term = searchTerm.toLowerCase();
+    const matchesSearch = !term ||
+      book.title?.toLowerCase().includes(term) ||
+      book.author?.toLowerCase().includes(term);
     const matchesGenre = !selectedGenre || book.genre === selectedGenre;
     return matchesSearch && matchesGenre;
   });
@@ -56,7 +68,7 @@ const HomePage = () => {
       {/* Search Section */}
       <div className="search-section">
         <div className="container">
-          <BookSearch 
+          <BookSearch
             searchTerm={searchTerm}
             setSearchTerm={setSearchTerm}
             selectedGenre={selectedGenre}
@@ -69,10 +81,12 @@ const HomePage = () => {
       <div className="books-section">
         <div className="container">
           <div className="section-header">
-            <h2>Recent Treasures</h2>
+            <h2>
+              {selectedGenre ? `${selectedGenre} Books` : 'Recent Treasures'}
+            </h2>
             <div className="section-decoration">✦ ✦ ✦</div>
           </div>
-          
+
           {loading ? (
             <LoadingSpinner />
           ) : (

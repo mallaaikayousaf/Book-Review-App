@@ -353,11 +353,14 @@ const seedDatabase = async () => {
           totalReviews: 41
         }
       ];
-      await Book.insertMany(books);
-      console.log('✨ Database seeded successfully!');
+      const result = await Book.insertMany(books, { ordered: false });
+      console.log(`✨ Database seeded successfully! Inserted ${result.length} books.`);
     }
   } catch (err) {
     console.error('Failed to seed database:', err.message);
+    if (err.writeErrors) {
+      err.writeErrors.forEach(e => console.error('  ✗', e.err.op?.title, '-', e.err.errmsg));
+    }
   }
 };
 

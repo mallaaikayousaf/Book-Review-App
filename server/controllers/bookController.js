@@ -5,9 +5,9 @@ const Book = require('../models/Book');
 // @access  Public
 const getBooks = async (req, res) => {
   try {
-    const { genre, search, page = 1, limit = 10 } = req.query;
+    const { genre, search, page = 1, limit = 100 } = req.query;
     const query = {};
-    
+
     if (genre) query.genre = genre;
     if (search) {
       query.$or = [
@@ -15,14 +15,12 @@ const getBooks = async (req, res) => {
         { author: { $regex: search, $options: 'i' } },
       ];
     }
-    
+
     const books = await Book.find(query)
-      .sort({ createdAt: -1 })
-      .limit(limit * 1)
-      .skip((page - 1) * limit);
-    
-    const total = await Book.countDocuments(query);
-    
+      .sort({ title: 1 })
+      .limit(Number(limit))
+      .skip((page - 1) * Number(limit));
+
     res.json(books);
   } catch (error) {
     res.status(500).json({ message: error.message });
